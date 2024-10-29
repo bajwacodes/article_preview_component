@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Overpass:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /*
+    8. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+/* ###############################
+################################## */
+:root {
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --desaturated-dark-blue: hsl(214, 17%, 51%);
+    --grayish-blue: hsl(212, 23%, 69%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+body{
+    font-size: 13px;
+    font-family: "Manrope", Arial, Helvetica, sans-serif;
+    background-color: var(--light-grayish-blue);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    width: 90%;
+    max-width: 450px;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+.img-wrapper{
+    background: url(images/drawers.jpg) no-repeat;
+    background-size: cover;
+    width: 100%;
+    /* height: 317px; */
+    height: 28vh;
+
+    border-radius: .7rem .7rem 0 0;
+}
+
+.content-wrapper{
+    background-color: #ffff;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 0 0 .7rem .7rem;
+}
+
+.big-txt{
+    color: var(--very-dark-grayish-blue);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.small-txt{
+    color: var(--desaturated-dark-blue);
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.author-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.3rem;
+}
+
+.avatar-box{
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-box img{
+    width: 45px;
+    border-radius: 50%;
+}
+
+.name{
+    color: var(--very-dark-grayish-blue);
+    font-weight: 700;
+    font-size: .9rem;
+}
+
+.date{
+    color: var(--grayish-blue);
+    font-size: .9rem;
+    font-weight: 400;
+}
+
+.share-box{
+    background-color: var(--light-grayish-blue);
+    padding: .8rem;
+    border-radius: 50%;
+    width: 15%;
+}
+
+.share-icon{
+  width: 100%;
+}
+
+.share-box:hover{
+  cursor: pointer;
+}
+
+.footer-bar{
+  display: none;
+  /* display: block; */
+}
+
+.footer-wrapper{
+  background-color: var(--very-dark-grayish-blue);
+  width: 100%;
+  padding: 1.1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 .7rem .7rem;
+}
+
+.footer-bar span{
+  display: flex;
+  gap: 1.1rem;
+}
+
+.footer-txt{
+  color: var(--light-grayish-blue);
+  font-weight: 200;
+  font-size: 1rem;
+  letter-spacing: 5px;
+}
+
+.socials{
+  display: flex;
+  gap: 1rem;
+}
+
+.icons{
+  height: 22px;
+}
+
+.footer-share-btn{
+  width: 11%;
+  padding: .6rem;
+}
+
+.footer-share-icon{
+  width: 100%;
+}
+
+
+@media (min-width: 1000px){
+  main{
+    max-width: none;
+    display: flex;
+    width: 62%;
+  }
+
+  .img-wrapper{
+    background: url(images/drawers.jpg) no-repeat;
+    background-size: cover;
+    width: 100%;
+    /* height: 317px; */
+    /* height: 28vh; */
+    height: auto;
+
+    border-radius: .7rem 0 0 .7rem;
+}
+
+  .content-wrapper{
+    border-radius: 0 .7rem .7rem 0;
+    padding: 2.5rem;
+  }
+
+  .big-txt{
+    width: 85%;
+  }
+
+  .share-box{
+    background-color: var(--light-grayish-blue);
+    padding: .8rem;
+    border-radius: 50%;
+    width: 12%;
+}
+
+.footer-share-btn{
+  display: none;
+}
+
+.footer-wrapper{
+  border-radius: .7rem;
+}
+
+.footer-wrapper::before{
+  content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: auto;
+	right: 90px;
+	bottom: -20px;
+	border: 10px solid;
+	border-color: var(--very-dark-grayish-blue) transparent transparent;
+}
+
+.footer-bar.absolute {
+  position: absolute;
+  overflow: visible;
+  bottom: 125px; /* Adjust as needed */
+  right: -35px; /* Adjust as needed */
+  z-index: 10;
+}
+
+
+}
